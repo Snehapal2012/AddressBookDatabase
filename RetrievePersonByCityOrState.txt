@@ -1,0 +1,37 @@
+mysql> SELECT firstName,city from contact_details GROUP BY city;                                                                 #to get person first name and city 
++-----------+-----------+
+| firstName | city      |
++-----------+-----------+
+| sangita   | bangalore |
+| sekhar    | hyderabad |
+| sneha     | kolkata   |
++-----------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT firstName,state from contact_details GROUP BY state;                                                        #to get first name and state
++-----------+------------+
+| firstName | state      |
++-----------+------------+
+| sangita   | karnataka  |
+| sekhar    | telangana  |
+| sneha     | westbengal |
++-----------+------------+
+3 rows in set (0.00 sec)
+
+mysql> Select * from contact_details where city='kolkata' or state='karnataka';                                                  #to get all contact details where city=kolkata or state=karnataka 
++-----------+----------+------------+-----------+------------+--------+-------------+-------------------+
+| firstName | lastName | address    | city      | state      | zip    | phonenumber | email             |
++-----------+----------+------------+-----------+------------+--------+-------------+-------------------+
+| sangita   | goswami  | kormangala | bangalore | karnataka  | 800034 | 9874732465  | sangita@gmail.com |
+| sneha     | pal      | belghoria  | kolkata   | westbengal | 700056 | 9674783976  | sneha@gmail.com   |
++-----------+----------+------------+-----------+------------+--------+-------------+-------------------+
+2 rows in set (0.00 sec)
+
+mysql> Select firstName , city, state from contact_details where city='hyderabad' or state='karnataka';               #to get first name, city and state where city=hyderabad or state= karnataka
++-----------+-----------+-----------+
+| firstName | city      | state     |
++-----------+-----------+-----------+
+| sangita   | bangalore | karnataka |
+| sekhar    | hyderabad | telangana |
++-----------+-----------+-----------+
+2 rows in set (0.00 sec)
