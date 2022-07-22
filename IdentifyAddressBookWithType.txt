@@ -1,0 +1,56 @@
+mysql> ALTER TABLE contact_details ADD type VARCHAR(150) after lastName;                         #adding another column or attribute type to the table
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe contact_details;                                                                                                         #show all the attributes of the table
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| firstName   | varchar(150) | NO   |     | NULL    |       |
+| lastName    | varchar(150) | NO   |     | NULL    |       |
+| type        | varchar(150) | YES  |     | NULL    |       |
+| address     | varchar(150) | NO   |     | NULL    |       |
+| city        | varchar(150) | NO   |     | NULL    |       |
+| state       | varchar(150) | NO   |     | NULL    |       |
+| zip         | varchar(150) | NO   |     | NULL    |       |
+| phonenumber | varchar(150) | NO   |     | NULL    |       |
+| email       | varchar(150) | NO   | PRI | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> update contact_details set type = 'friends' where firstName ='agnic';                                           #updating types to each row
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update contact_details set type = 'friends' where firstName ='sayani';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update contact_details set type = 'friends' where firstName ='shreyashi';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update contact_details set type = 'family' where firstName ='sangita';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update contact_details set type = 'family' where firstName ='sekhar';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update contact_details set type = 'profession' where firstName ='sneha';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from contact_details;                                                                                                        #to show the table
++-----------+----------+------------+------------+-----------+------------+--------+-------------+---------------------+
+| firstName | lastName | type       | address    | city      | state      | zip    | phonenumber | email               |
++-----------+----------+------------+------------+-----------+------------+--------+-------------+---------------------+
+| agnic     | biswas   | friends    | behala     | kolkata   | westbengal | 700006 | 9876543210  | agnic@gmail.com     |
+| sangita   | goswami  | family     | kormangala | bangalore | karnataka  | 800034 | 9874732465  | sangita@gmail.com   |
+| sayani    | dutta    | friends    | salt lake  | kolkata   | westbengal | 700049 | 9898989090  | sayani@gmail.com    |
+| sekhar    | das      | family     | amerpet    | hyderabad | telangana  | 500067 | 9674179208  | sekhar@gmail.com    |
+| shreyashi | saha     | friends    | dum dum    | kolkata   | westbengal | 700021 | 9123456780  | shreyashi@gmail.com |
+| sneha     | pal      | profession | belghoria  | kolkata   | westbengal | 700056 | 9674783976  | sneha@gmail.com     |
++-----------+----------+------------+------------+-----------+------------+--------+-------------+---------------------+
+6 rows in set (0.00 sec)
