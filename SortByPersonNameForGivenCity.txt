@@ -1,0 +1,30 @@
+mysql> INSERT INTO contact_details (firstName, lastName, address, city, state, zip, phonenumber, email) VALUES                    #inserting some contacts inside the table
+    -> ('sayani', 'dutta', 'salt lake', 'kolkata', 'westbengal', '700049','9898989090','sayani@gmail.com'),
+    -> ('agnic', 'biswas', 'behala', 'kolkata', 'westbengal', '700006', '9876543210', 'agnic@gmail.com'),
+    -> ('shreyashi', 'saha', 'dum dum', 'kolkata', 'westbengal', '700021', '9123456780', 'shreyashi@gmail.com');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> Select * from contact_details;                                                                                                                                              #to show all details in the table
++-----------+----------+------------+-----------+------------+--------+-------------+---------------------+
+| firstName | lastName | address    | city      | state      | zip    | phonenumber | email               |
++-----------+----------+------------+-----------+------------+--------+-------------+---------------------+
+| agnic     | biswas   | behala     | kolkata   | westbengal | 700006 | 9876543210  | agnic@gmail.com     |
+| sangita   | goswami  | kormangala | bangalore | karnataka  | 800034 | 9874732465  | sangita@gmail.com   |
+| sayani    | dutta    | salt lake  | kolkata   | westbengal | 700049 | 9898989090  | sayani@gmail.com    |
+| sekhar    | das      | amerpet    | hyderabad | telangana  | 500067 | 9674179208  | sekhar@gmail.com    |
+| shreyashi | saha     | dum dum    | kolkata   | westbengal | 700021 | 9123456780  | shreyashi@gmail.com |
+| sneha     | pal      | belghoria  | kolkata   | westbengal | 700056 | 9674783976  | sneha@gmail.com     |
++-----------+----------+------------+-----------+------------+--------+-------------+---------------------+
+6 rows in set (0.00 sec)
+
+mysql> Select * from contact_details where city='kolkata' ORDER BY firstName;                                                                         #sorting person's first name alphabetically for given city=kolkata
++-----------+----------+-----------+---------+------------+--------+-------------+---------------------+
+| firstName | lastName | address   | city    | state      | zip    | phonenumber | email               |
++-----------+----------+-----------+---------+------------+--------+-------------+---------------------+
+| agnic     | biswas   | behala    | kolkata | westbengal | 700006 | 9876543210  | agnic@gmail.com     |
+| sayani    | dutta    | salt lake | kolkata | westbengal | 700049 | 9898989090  | sayani@gmail.com    |
+| shreyashi | saha     | dum dum   | kolkata | westbengal | 700021 | 9123456780  | shreyashi@gmail.com |
+| sneha     | pal      | belghoria | kolkata | westbengal | 700056 | 9674783976  | sneha@gmail.com     |
++-----------+----------+-----------+---------+------------+--------+-------------+---------------------+
+4 rows in set (0.00 sec)
