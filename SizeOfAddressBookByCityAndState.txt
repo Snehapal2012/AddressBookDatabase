@@ -1,0 +1,9 @@
+mysql> SELECT city, state, COUNT(firstName) from contact_details GROUP BY city, state;                  #to get the size of the table by city and state
++-----------+------------+------------------+
+| city      | state      | COUNT(firstName) |
++-----------+------------+------------------+
+| bangalore | karnataka  |                1 |
+| hyderabad | telangana  |                1 |
+| kolkata   | westbengal |                1 |
++-----------+------------+------------------+
+3 rows in set (0.00 sec)
