@@ -1,0 +1,26 @@
+mysql> CREATE DATABASE address_book_service;                  #to create database
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;                                                                #to show all databases
++----------------------+
+| Database             |
++----------------------+
+| address_book_service |
+| information_schema   |
+| mysql                |
+| paroll_service       |
+| performance_schema   |
+| sys                  |
++----------------------+
+6 rows in set (0.00 sec)
+
+mysql> USE address_book_service;                                            #to use only address book database
+Database changed
+
+mysql> SELECT DATABASE();                                                  #to select address book database
++----------------------+ 
+| DATABASE()           |
++----------------------+
+| address_book_service |
++----------------------+
+1 row in set (0.00 sec)
