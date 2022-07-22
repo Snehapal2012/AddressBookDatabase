@@ -1,0 +1,22 @@
+mysql> select * from contact_details;                                                                                                                                                               #to show the table
++-----------+----------+------------+------------+-----------+------------+--------+-------------+---------------------+
+| firstName | lastName | type       | address    | city      | state      | zip    | phonenumber | email               |
++-----------+----------+------------+------------+-----------+------------+--------+-------------+---------------------+
+| agnic     | biswas   | friends    | behala     | kolkata   | westbengal | 700006 | 9876543210  | agnic@gmail.com     |
+| sangita   | goswami  | family     | kormangala | bangalore | karnataka  | 800034 | 9874732465  | sangita@gmail.com   |
+| sayani    | dutta    | friends    | salt lake  | kolkata   | westbengal | 700049 | 9898989090  | sayani@gmail.com    |
+| sekhar    | das      | family     | amerpet    | hyderabad | telangana  | 500067 | 9674179208  | sekhar@gmail.com    |
+| shreyashi | saha     | friends    | dum dum    | kolkata   | westbengal | 700021 | 9123456780  | shreyashi@gmail.com |
+| sneha     | pal      | profession | belghoria  | kolkata   | westbengal | 700056 | 9674783976  | sneha@gmail.com     |
++-----------+----------+------------+------------+-----------+------------+--------+-------------+---------------------+
+6 rows in set (0.00 sec)
+
+mysql> Select type, COUNT(firstName) from contact_details group by type;                                                                                               #to count by the type
++------------+------------------+
+| type       | COUNT(firstName) |
++------------+------------------+
+| friends    |                3 |
+| family     |                2 |
+| profession |                1 |
++------------+------------------+
+3 rows in set (0.00 sec)
