@@ -1,0 +1,20 @@
+mysql> INSERT INTO contact_details (firstName, lastName, type, address, city, state, zip, phonenumber, email) VALUES                           #inserting new friends and family records to the table
+    -> ('sandip', 'goswami', 'family', 'uppal', 'hyderabad', 'telangana', '500089', '9123458760', 'sandip@gmail.com'),
+    -> ('nilesh', 'mukherjee', 'friends', 'mahadevapura', 'bangalore', 'karnataka', '600009', '9832022247', 'nilesh@gmail.com');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from contact_details;                                                                                                                                                            #to show the table details
++-----------+-----------+------------+--------------+-----------+------------+--------+-------------+---------------------+
+| firstName | lastName  | type       | address      | city      | state      | zip    | phonenumber | email               |
++-----------+-----------+------------+--------------+-----------+------------+--------+-------------+---------------------+
+| agnic     | biswas    | friends    | behala       | kolkata   | westbengal | 700006 | 9876543210  | agnic@gmail.com     |
+| nilesh    | mukherjee | friends    | mahadevapura | bangalore | karnataka  | 600009 | 9832022247  | nilesh@gmail.com    |
+| sandip    | goswami   | family     | uppal        | hyderabad | telangana  | 500089 | 9123458760  | sandip@gmail.com    |
+| sangita   | goswami   | family     | kormangala   | bangalore | karnataka  | 800034 | 9874732465  | sangita@gmail.com   |
+| sayani    | dutta     | friends    | salt lake    | kolkata   | westbengal | 700049 | 9898989090  | sayani@gmail.com    |
+| sekhar    | das       | family     | amerpet      | hyderabad | telangana  | 500067 | 9674179208  | sekhar@gmail.com    |
+| shreyashi | saha      | friends    | dum dum      | kolkata   | westbengal | 700021 | 9123456780  | shreyashi@gmail.com |
+| sneha     | pal       | profession | belghoria    | kolkata   | westbengal | 700056 | 9674783976  | sneha@gmail.com     |
++-----------+-----------+------------+--------------+-----------+------------+--------+-------------+---------------------+
+8 rows in set (0.00 sec)
