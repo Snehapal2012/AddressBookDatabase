@@ -1,0 +1,28 @@
+mysql> CREATE TABLE contact_details                                                                 #to create attributes or columns in the table
+    -> (
+    -> firstName        VARCHAR(150) NOT NULL,
+    -> lastName         VARCHAR(150) NOT NULL,
+    -> address          VARCHAR(150) NOT NULL,
+    -> city             VARCHAR(150) NOT NULL,
+    -> state            VARCHAR(150) NOT NULL,
+    -> zip              VARCHAR(150) NOT NULL,
+    -> phonenumber      VARCHAR(150) NOT NULL,
+    -> email            VARCHAR(150) NOT NULL,
+    -> PRIMARY KEY      (email)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> DESCRIBE contact_details;                                                                          #to describe the table
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| firstName   | varchar(150) | NO   |     | NULL    |       |
+| lastName    | varchar(150) | NO   |     | NULL    |       |
+| address     | varchar(150) | NO   |     | NULL    |       |
+| city        | varchar(150) | NO   |     | NULL    |       |
+| state       | varchar(150) | NO   |     | NULL    |       |
+| zip         | varchar(150) | NO   |     | NULL    |       |
+| phonenumber | varchar(150) | NO   |     | NULL    |       |
+| email       | varchar(150) | NO   | PRI | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
