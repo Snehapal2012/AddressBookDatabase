@@ -1,0 +1,23 @@
+mysql> SELECT * FROM contact_details;                                                                                                                            #to show table
++-----------+-----------+-------------+-----------+------------+--------+-------------+-------------------+
+| firstName | lastName  | address     | city      | state      | zip    | phonenumber | email             |
++-----------+-----------+-------------+-----------+------------+--------+-------------+-------------------+
+| nilesh    | mukherjee | indiranagar | delhi     | up         | 100010 | 9005588990  | nilesh@gmail.com  |
+| sangita   | goswami   | kormangala  | bangalore | karnataka  | 800034 | 9874732465  | sangita@gmail.com |
+| sekhar    | das       | amerpet     | hyderabad | telangana  | 500067 | 9674179208  | sekhar@gmail.com  |
+| sneha     | pal       | belghoria   | kolkata   | westbengal | 700056 | 9674783976  | sneha@gmail.com   |
++-----------+-----------+-------------+-----------+------------+--------+-------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> DELETE FROM contact_details where firstName='nilesh';                                                                                           #to delete particular contact or row
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM contact_details;
++-----------+----------+------------+-----------+------------+--------+-------------+-------------------+
+| firstName | lastName | address    | city      | state      | zip    | phonenumber | email             |
++-----------+----------+------------+-----------+------------+--------+-------------+-------------------+
+| sangita   | goswami  | kormangala | bangalore | karnataka  | 800034 | 9874732465  | sangita@gmail.com |
+| sekhar    | das      | amerpet    | hyderabad | telangana  | 500067 | 9674179208  | sekhar@gmail.com  |
+| sneha     | pal      | belghoria  | kolkata   | westbengal | 700056 | 9674783976  | sneha@gmail.com   |
++-----------+----------+------------+-----------+------------+--------+-------------+-------------------+
+3 rows in set (0.00 sec)
