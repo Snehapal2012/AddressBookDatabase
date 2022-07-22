@@ -1,0 +1,18 @@
+mysql> INSERT INTO contact_details (firstName, lastName, address, city, state, zip, phonenumber, email) VALUES          #to insert contacts in the table
+    -> ('sneha', 'pal', 'belghoria', 'kolkata', 'westbengal', '700056', '9674783976', 'sneha@gmail.com'),
+    ->  ('sangita', 'pal', 'kormangala', 'bangalore', 'karnataka', '800034', '9874732465', 'sangita@gmail.com'),
+    -> ('nilesh', 'mukherjee', 'indiranagar', 'delhi', 'up', '100010', '9005588990', 'nilesh@gmail.com'),
+    -> ('sekhar', 'das', 'amerpet', 'hyderabad', 'telangana', '500067', '9674179208', 'sekhar@gmail.com');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM contact_details;                                                                                                                           #to show the table
++-----------+-----------+-------------+-----------+------------+--------+-------------+-------------------+
+| firstName | lastName  | address     | city      | state      | zip    | phonenumber | email             |
++-----------+-----------+-------------+-----------+------------+--------+-------------+-------------------+
+| nilesh    | mukherjee | indiranagar | delhi     | up         | 100010 | 9005588990  | nilesh@gmail.com  |
+| sangita   | pal       | kormangala  | bangalore | karnataka  | 800034 | 9874732465  | sangita@gmail.com |
+| sekhar    | das       | amerpet     | hyderabad | telangana  | 500067 | 9674179208  | sekhar@gmail.com  |
+| sneha     | pal       | belghoria   | kolkata   | westbengal | 700056 | 9674783976  | sneha@gmail.com   |
++-----------+-----------+-------------+-----------+------------+--------+-------------+-------------------+
+4 rows in set (0.00 sec)
