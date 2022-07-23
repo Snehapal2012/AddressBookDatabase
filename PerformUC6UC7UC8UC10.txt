@@ -1,0 +1,82 @@
+mysql> select * from contact_details;                                                                                                                                                        #to retrieve all the data from the table
++-----------+-----------+------------+--------------+-----------+------------+--------+-------------+---------------------+
+| firstName | lastName  | type       | address      | city      | state      | zip    | phonenumber | email               |
++-----------+-----------+------------+--------------+-----------+------------+--------+-------------+---------------------+
+| agnic     | biswas    | friends    | behala       | kolkata   | westbengal | 700006 | 9876543210  | agnic@gmail.com     |
+| nilesh    | mukherjee | friends    | mahadevapura | bangalore | karnataka  | 600009 | 9832022247  | nilesh@gmail.com    |
+| sandip    | goswami   | family     | uppal        | hyderabad | telangana  | 500089 | 9123458760  | sandip@gmail.com    |
+| sangita   | goswami   | family     | kormangala   | bangalore | karnataka  | 800034 | 9874732465  | sangita@gmail.com   |
+| sayani    | dutta     | friends    | salt lake    | kolkata   | westbengal | 700049 | 9898989090  | sayani@gmail.com    |
+| sekhar    | das       | family     | amerpet      | hyderabad | telangana  | 500067 | 9674179208  | sekhar@gmail.com    |
+| shreyashi | saha      | friends    | dum dum      | kolkata   | westbengal | 700021 | 9123456780  | shreyashi@gmail.com |
+| sneha     | pal       | profession | belghoria    | kolkata   | westbengal | 700056 | 9674783976  | sneha@gmail.com     |
++-----------+-----------+------------+--------------+-----------+------------+--------+-------------+---------------------+
+8 rows in set (0.00 sec)
+
+mysql> select * from contact_details where city='hyderabad' or state='karnataka';                                                                               #to retrieve person for given city or state
++-----------+-----------+---------+--------------+-----------+-----------+--------+-------------+-------------------+
+| firstName | lastName  | type    | address      | city      | state     | zip    | phonenumber | email             |
++-----------+-----------+---------+--------------+-----------+-----------+--------+-------------+-------------------+
+| nilesh    | mukherjee | friends | mahadevapura | bangalore | karnataka | 600009 | 9832022247  | nilesh@gmail.com  |
+| sandip    | goswami   | family  | uppal        | hyderabad | telangana | 500089 | 9123458760  | sandip@gmail.com  |
+| sangita   | goswami   | family  | kormangala   | bangalore | karnataka | 800034 | 9874732465  | sangita@gmail.com |
+| sekhar    | das       | family  | amerpet      | hyderabad | telangana | 500067 | 9674179208  | sekhar@gmail.com  |
++-----------+-----------+---------+--------------+-----------+-----------+--------+-------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> select city, type, COUNT(firstName) from contact_details group by city;                                                                                #to count person in particular city
++-----------+---------+------------------+
+| city      | type    | COUNT(firstName) |
++-----------+---------+------------------+
+| kolkata   | friends |                4 |
+| bangalore | friends |                2 |
+| hyderabad | family  |                2 |
++-----------+---------+------------------+
+3 rows in set (0.00 sec)
+
+mysql> select state, type, COUNT(firstName) from contact_details group by state;                                                                       #to count person in particular state
++------------+---------+------------------+
+| state      | type    | COUNT(firstName) |
++------------+---------+------------------+
+| westbengal | friends |                4 |
+| karnataka  | friends |                2 |
+| telangana  | family  |                2 |
++------------+---------+------------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from contact_details where city='kolkata' order by firstName;                                                                              #sorting person name for given city=kolkata
++-----------+----------+------------+-----------+---------+------------+--------+-------------+---------------------+
+| firstName | lastName | type       | address   | city    | state      | zip    | phonenumber | email               |
++-----------+----------+------------+-----------+---------+------------+--------+-------------+---------------------+
+| agnic     | biswas   | friends    | behala    | kolkata | westbengal | 700006 | 9876543210  | agnic@gmail.com     |
+| sayani    | dutta    | friends    | salt lake | kolkata | westbengal | 700049 | 9898989090  | sayani@gmail.com    |
+| shreyashi | saha     | friends    | dum dum   | kolkata | westbengal | 700021 | 9123456780  | shreyashi@gmail.com |
+| sneha     | pal      | profession | belghoria | kolkata | westbengal | 700056 | 9674783976  | sneha@gmail.com     |
++-----------+----------+------------+-----------+---------+------------+--------+-------------+---------------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from contact_details;                                                                                                                                                       #retrieving all the data from the table
++-----------+-----------+------------+--------------+-----------+------------+--------+-------------+---------------------+
+| firstName | lastName  | type       | address      | city      | state      | zip    | phonenumber | email               |
++-----------+-----------+------------+--------------+-----------+------------+--------+-------------+---------------------+
+| agnic     | biswas    | friends    | behala       | kolkata   | westbengal | 700006 | 9876543210  | agnic@gmail.com     |
+| nilesh    | mukherjee | friends    | mahadevapura | bangalore | karnataka  | 600009 | 9832022247  | nilesh@gmail.com    |
+| sandip    | goswami   | family     | uppal        | hyderabad | telangana  | 500089 | 9123458760  | sandip@gmail.com    |
+| sangita   | goswami   | family     | kormangala   | bangalore | karnataka  | 800034 | 9874732465  | sangita@gmail.com   |
+| sayani    | dutta     | friends    | salt lake    | kolkata   | westbengal | 700049 | 9898989090  | sayani@gmail.com    |
+| sekhar    | das       | family     | amerpet      | hyderabad | telangana  | 500067 | 9674179208  | sekhar@gmail.com    |
+| shreyashi | saha      | friends    | dum dum      | kolkata   | westbengal | 700021 | 9123456780  | shreyashi@gmail.com |
+| sneha     | pal       | profession | belghoria    | kolkata   | westbengal | 700056 | 9674783976  | sneha@gmail.com     |
++-----------+-----------+------------+--------------+-----------+------------+--------+-------------+---------------------+
+8 rows in set (0.00 sec)
+
+mysql> select type, COUNT(firstName) from contact_details group by type;                                                                                      #count type from table
++------------+------------------+
+| type       | COUNT(firstName) |
++------------+------------------+
+| friends    |                4 |
+| family     |                3 |
+| profession |                1 |
++------------+------------------+
+3 rows in set (0.00 sec)
+
